@@ -87,6 +87,6 @@
     <param-value>images/sport</param-value>
   </context-param>
   <welcome-file-list>
-    <welcome-file></welcome-file>
+    <welcome-file>/freetips</welcome-file>
   </welcome-file-list>
 </web-app>
