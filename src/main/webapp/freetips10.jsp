@@ -13,12 +13,12 @@
 <script src="../moment.js"></script>
 <script src="../moment-timezone-with-data.js"></script>
 <script src="../moment-data.js"></script>
-<script src="../bootstrap/js/bootstrap.bundle.js"></script>
+<script src="../bootstrap.bundle.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="../nav.css" rel="stylesheet" type="text/css"/>
-<script src="../bootstrap/js/bootstrap-select.js"></script>
-<script src="../bootstrap/js/bootstrap-multiselect.js"></script>
+<script src="../bootstrap-select.js"></script>
+<script src="../bootstrap-multiselect.js"></script>
 
 <link href="../bootstrap/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
 <style>
