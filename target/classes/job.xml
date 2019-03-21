@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<job-scheduling-data xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd"
+ version="1.8">
+<schedule>
+ <job>
+ <name>mailSenderJob</name>
+ <group>MAILSENDER_GROUP</group>
+ <description>This job will trigger mail service for every minute</description>
+ <job-class>com.hankav.results.ScheduleTipEmailSender</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>mailSenderTrigger</name>
+ <group>MAILSENDER_TRIGGER</group>
+ <job-name>mailSenderJob</job-name>
+ <job-group>MAILSENDER_GROUP</job-group>
+ <cron-expression>0 0/15 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+<!-- schedule football results -->
+<schedule>
+ <job>
+ <name>FootballResultsJob</name>
+ <group>FootballResults_GROUP</group>
+ <description>This job will trigger football results update for every few minutes</description>
+ <job-class>com.hankav.results.ScheduleGetFootballResults</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>FootballResultsTrigger</name>
+ <group>FootballResults_TRIGGER</group>
+ <job-name>FootballResultsJob</job-name>
+ <job-group>FootballResults_GROUP</job-group>
+ <cron-expression>0 0/59 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+<schedule>
+ <job>
+ <name>TennisResultsJob</name>
+ <group>TennisResults_GROUP</group>
+ <description>This job will trigger tennis results update for every few minutes</description>
+ <job-class>com.hankav.results.ScheduleGetTennisResults</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>TennisResultTrigger</name>
+ <group>TennisResults_TRIGGER</group>
+ <job-name>TennisResultsJob</job-name>
+ <job-group>TennisResults_GROUP</job-group>
+ <cron-expression>0 15/59 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+<schedule>
+ <job>
+ <name>BasketballResultsJob</name>
+ <group>BasketballResults_GROUP</group>
+ <description>This job will trigger basketball results update for every few minutes</description>
+ <job-class>com.hankav.results.ScheduleGetBasketballResults</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>BasketballResultTrigger</name>
+ <group>BasketballResults_TRIGGER</group>
+ <job-name>BasketballResultsJob</job-name>
+ <job-group>BasketballResults_GROUP</job-group>
+ <cron-expression>0 30/59 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+<schedule>
+ <job>
+ <name>HockeyResultsJob</name>
+ <group>HockeyResults_GROUP</group>
+ <description>This job will trigger hockey results update for every few minutes</description>
+ <job-class>com.hankav.results.ScheduleGetHockeyResults</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>HockeyResultTrigger</name>
+ <group>HockeyResults_TRIGGER</group>
+ <job-name>HockeyResultsJob</job-name>
+ <job-group>HockeyResults_GROUP</job-group>
+ <cron-expression>0 45/59 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+<schedule>
+ <job>
+ <name>AmericanFootballResultsJob</name>
+ <group>AmericanFootballResults_GROUP</group>
+ <description>This job will trigger americanfootball results update for every few minutes</description>
+ <job-class>com.hankav.results.ScheduleGetAmericanFootballResults</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>AmericanFootballResultTrigger</name>
+ <group>AmericanFootballResults_TRIGGER</group>
+ <job-name>AmericanFootballResultsJob</job-name>
+ <job-group>AmericanFootballResults_GROUP</job-group>
+ <cron-expression>0 59/59 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+
+
+
+
+
+
+<schedule>
+ <job>
+ <name>StatsJob</name>
+ <group>Stats_GROUP</group>
+ <description>This job will trigger stats update for every 1 hour</description>
+ <job-class>com.hankav.results.ScheduleStatsUpdater</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>StatsTrigger</name>
+ <group>Stats_TRIGGER</group>
+ <job-name>StatsJob</job-name>
+ <job-group>Stats_GROUP</job-group>
+ <cron-expression>0 0 0/1 * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+<schedule>
+ <job>
+ <name>PurchaseEmailSenderJob</name>
+ <group>PurchaseEmailSender_GROUP</group>
+ <description>This job will trigger sending emails after purchase for every 10 minutes</description>
+ <job-class>com.hankav.results.SchedulePaymentEmails</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>PurchaseTrigger</name>
+ <group>PurchaseEmailSender_TRIGGER</group>
+ <job-name>PurchaseEmailSenderJob</job-name>
+ <job-group>PurchaseEmailSender_GROUP</job-group>
+ <cron-expression>0 0/10 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+<schedule>
+ <job>
+ <name>ScheduleExpiringSubscriptionsJob</name>
+ <group>ScheduleExpiringSubscriptions_GROUP</group>
+ <description>This job will update subscriptions' status for every 24 hours</description>
+ <job-class>com.hankav.results.ScheduleExpiringSubscriptions</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>ExpiringTrigger</name>
+ <group>ScheduleExpiringSubscriptions_TRIGGER</group>
+ <job-name>ScheduleExpiringSubscriptionsJob</job-name>
+ <job-group>ScheduleExpiringSubscriptions_GROUP</job-group>
+ <cron-expression>0 0 0/23 * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+<!-- 
+<schedule>
+ <job>
+ <name>ScheduleRegistrationEmailSenderJob</name>
+ <group>ScheduleRegistrationEmailSender_GROUP</group>
+ <description>This job will send verification email to unverified users every few minutes</description>
+ <job-class>com.hankav.results.ScheduleRegistrationEmailSender</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>EmailVerificationTrigger</name>
+ <group>ScheduleRegistrationEmailSender_TRIGGER</group>
+ <job-name>ScheduleRegistrationEmailSenderJob</job-name>
+ <job-group>ScheduleRegistrationEmailSender_GROUP</job-group>
+ <cron-expression>0 0/15 * * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule> -->
+
+
+</job-scheduling-data>

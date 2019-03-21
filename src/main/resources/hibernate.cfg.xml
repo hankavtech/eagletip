@@ -1,0 +1,100 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.username">fullkeshav</property>
+        <property name="hibernate.connection.password">Iforget14!</property>
+        <property name="hibernate.connection.url">jdbc:mysql://206.189.26.56:3306/eagletip</property>
+        <property name="connection.pool_size">1000</property>
+	   <property name="hibernate.query.plan_cache_max_strong_references">128</property>
+	   <property name="hibernate.query.plan_cache_max_soft_references">2048</property>
+	   <property name="hibernate.dialect.storage_engine" >innodb</property>
+	   <property name="current_session_context_class">thread</property>
+    
+     <!-- Enable Hibernate's automatic session context management -->
+
+  
+
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">validate</property>
+    <!-- <property name="hibernate.order_updates">true</property>
+    <property name="hibernate.order_inserts">true</property>  -->
+  
+    <!-- Names the annotated entity class-->
+    <mapping class="com.hankav.model.Tip"/>
+    <mapping class="com.hankav.model.Tipster"/>
+    <mapping class="com.hankav.model.User"/>
+    <mapping class="com.hankav.model.Sport"/>
+    <mapping class="com.hankav.model.Market"/> 
+    <mapping class="com.hankav.model.Subscription"/>  
+    <mapping class="com.hankav.model.MatchTip"/>
+      <mapping class="com.hankav.model.Stats"/>
+      <mapping class="com.hankav.model.Chat"/>
+      <mapping class="com.hankav.model.Item"/>
+      <mapping class="com.hankav.model.Message"/>
+      <mapping class="com.hankav.model.Preferences"/>
+    </session-factory>
+</hibernate-configuration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>

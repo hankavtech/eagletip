@@ -1,0 +1,93 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <listener>
+    <listener-class>
+	 org.quartz.ee.servlet.QuartzInitializerListener
+	 </listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>GiveLeagues</servlet-name>
+    <servlet-class>com.hankav.controller.GiveLeagues</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GiveLeagues</servlet-name>
+    <url-pattern>/GiveLeagues</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.hankav.controller.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterNewTipster</servlet-name>
+    <servlet-class>com.hankav.controller.RegisterNewTipster</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterNewTipster</servlet-name>
+    <url-pattern>/RegisterNewTipster</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BuildLast10ActiveFreeTips</servlet-name>
+    <servlet-class>com.hankav.controller.BuildLast10ActiveFreeTips</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuildLast10ActiveFreeTips</servlet-name>
+    <url-pattern>/BuildLast10ActiveFreeTips</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ChatServlet</servlet-name>
+    <servlet-class>com.hankav.controller.ChatServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChatServlet</servlet-name>
+    <url-pattern>/ChatServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.hankav.controller.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddClickedUserToSession</servlet-name>
+    <servlet-class>com.hankav.controller.AddClickedUserToSession</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddClickedUserToSession</servlet-name>
+    <url-pattern>/AddClickedUserToSession</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GetAllTipsterTipsForHisPersonalPage</servlet-name>
+    <servlet-class>com.hankav.controller.GetAllTipsterTipsForHisPersonalPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllTipsterTipsForHisPersonalPage</servlet-name>
+    <url-pattern>/tipster/tips</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BuildMainPageForFreeTips</servlet-name>
+    <servlet-class>com.hankav.controller.BuildMainPageForFreeTips</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuildMainPageForFreeTips</servlet-name>
+    <url-pattern>/</url-pattern>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>sport</param-name>
+    <param-value>images/sport</param-value>
+  </context-param>
+  <welcome-file-list>
+    <welcome-file></welcome-file>
+  </welcome-file-list>
+</web-app>

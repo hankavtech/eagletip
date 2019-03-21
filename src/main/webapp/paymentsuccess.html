@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>EAGLE TIP</title>
+</head>
+<body>
+<div class="container">
+<div class='row align-self-center'>
+<p class='text-success'>Thanks for your purchase. You will be redirected to main page in a few seconds while we work on your order.</p>
+</div>
+</div>
+<script>
+  setTimeout(function(){
+	  location.href='https://www.eagletip.com/paidtips';
+  },4000);
+  
+  
+  
+  var sessionuser="${sessionScope.username}";
+  $("#checkout_button").click(function(e){
+		e.preventDefault();
+		console.log(sessionuser);
+		if(sessionuser.trim()==""){
+			
+			$("#registeralert").css("display","block");
+			setTimeout(function(){
+				$("#registeralert").css("display","none");
+			},3000);
+		}
+		else{
+			location.replace("https://www.eagletip.com/payment");
+		}
+	});
+
+</script>
+</body>
+
+
+</html>
