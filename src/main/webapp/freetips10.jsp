@@ -8,19 +8,18 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EAGLE TIP</title>
-<script src="../jquery.js"></script>
-<script src="../math.min.js"></script>
-<script src="../moment.js"></script>
-<script src="../moment-timezone-with-data.js"></script>
-<script src="../moment-data.js"></script>
-<script src="../bootstrap.bundle.js"></script>
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="../bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="../nav.css" rel="stylesheet" type="text/css"/>
-<script src="../bootstrap-select.js"></script>
-<script src="../bootstrap-multiselect.js"></script>
-
-<link href="../bootstrap/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
+<script src="https://www.eagletip.com/jquery.js"></script>
+<script src="https://www.eagletip.com/math.min.js"></script>
+<script src="https://www.eagletip.com/moment.js"></script>
+<script src="https://www.eagletip.com/moment-timezone-with-data.js"></script>
+<script src="https://www.eagletip.com/moment-data.js"></script>
+<script src="https://www.eagletip.com/bootstrap/js/bootstrap.bundle.js" ></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.eagletip.com/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://www.eagletip.com/nav.css"/>
+<script src="https://www.eagletip.com/bootstrap/js/bootstrap-select.js"></script>
+<script src="https://www.eagletip.com/bootstrap/js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="https://www.eagletip.com/bootstrap/css/bootstrap-multiselect.css" />
 <style>
 
 html, body {
