@@ -11,11 +11,13 @@
 <title>EAGLE TIP</title>
 <script src="https://www.eagletip.com/jquery.js"></script>
 <script src="https://www.eagletip.com/bootstrap/js/bootstrap.bundle.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://www.eagletip.com/moment.js"></script>
+<script src="https://www.eagletip.com/moment-timezone-with-data.js"></script>
+<script src="https://www.eagletip.com/moment-data.js"></script>
 <script src="bootstrap/js/bootstrap.bundle.js"></script>
 <script src="bootstrap/js/bootstrap-select.js"></script>
 <link rel="stylesheet" href="https://www.eagletip.com/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.eagletip.com/nav.css"/>
 <style>
 

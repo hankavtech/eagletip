@@ -18,7 +18,6 @@
 <script src="bootstrap/js/bootstrap.bundle.js"></script>
 <script src="bootstrap/js/bootstrap-select.js"></script>
 <link rel="stylesheet" href="https://www.eagletip.com/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 <link rel="stylesheet" href="https://www.eagletip.com/nav.css"/>
 <style>
 

@@ -13,6 +13,7 @@
 <script src="https://www.eagletip.com/jquery.js"></script>
 <script src="https://www.eagletip.com/math.min.js"></script>
 <script src="https://www.eagletip.com/moment.js"></script>
+<script src="https://www.eagletip.com/moment-timezone.js"></script>
 <script src="https://www.eagletip.com/moment-timezone-with-data.js"></script>
 <script src="https://www.eagletip.com/moment-data.js"></script>
 <script src="https://www.eagletip.com/bootstrap/js/bootstrap.bundle.js" ></script>
