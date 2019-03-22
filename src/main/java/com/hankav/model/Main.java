@@ -6,21 +6,24 @@ import java.text.ParseException;
 import javax.mail.internet.AddressException;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.hankav.dao.HibSessionFactory;
+import com.hankav.dao.MatchReader;
 
 public class Main {
 
 	public static void main(String[] args) throws ParseException, HibernateException, IOException, AddressException {
 
-		/*
-		 * SessionFactory factory = HibSessionFactory.getFactory(); Session session =
-		 * factory.openSession();
-		 * 
-		 * MatchReader reader = new MatchReader(); reader.readmatches("football");
-		 * 
-		 * FootballResultUpdate up = new FootballResultUpdate(); up.updateResults();
-		 * 
-		 * session.close();
-		 */
+		SessionFactory factory = HibSessionFactory.getFactory();
+		Session session = factory.openSession();
+		MatchReader reader = new MatchReader();
+		reader.readmatches("football");
+		/* FootballResultUpdate up = new FootballResultUpdate(); */
+		/* up.updateResults(); */
+
+		session.close();
 
 		/*
 		 * MatchReader reader = new MatchReader(); reader.readmatches("hockey");
