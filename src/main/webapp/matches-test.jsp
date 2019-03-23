@@ -892,13 +892,14 @@ window.setTimeout(function() {
 		success:function(response){
 			marketresponse=response;
 			$.each(response,function(index,value){
-				$("#league").append('<option class="text-success" value='+index+'>'+index+'</option>');		
+				console.log(index);
+				$("#league").append('<option class="text-success" value="'+index+'">'+index+'</option>');		
 				
 			});
 			
 			var selectedText = $("#league option:selected").html();
 			$.each(response[selectedText],function(index,value){
-				$("#tournament").append('<option class="text-success" value='+value+'>'+value+'</option>');	
+				$("#tournament").append('<option class="text-success" value="'+value+'">'+value+'</option>');	
 			});
 			var selectedTournament=$("#tournament option:selected").html();
 			
