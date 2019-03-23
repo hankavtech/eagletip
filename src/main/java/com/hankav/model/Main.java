@@ -19,7 +19,7 @@ public class Main {
 		SessionFactory factory = HibSessionFactory.getFactory();
 		Session session = factory.openSession();
 		MatchReader reader = new MatchReader();
-		reader.readmatches("tennis");
+		reader.readmatches("hockey");
 		/* FootballResultUpdate up = new FootballResultUpdate(); */
 		/* up.updateResults(); */
 

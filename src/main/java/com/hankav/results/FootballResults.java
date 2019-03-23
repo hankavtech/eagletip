@@ -125,8 +125,6 @@ public class FootballResults {
 				} else if (tgoals == pgoals) {
 					result = "void";
 				}
-
-				result = "won";
 			} else if (lines.equalsIgnoreCase("Over")) {
 
 				if (tgoals < pgoals) {
@@ -166,7 +164,6 @@ public class FootballResults {
 					result = "void";
 				}
 
-				result = "won";
 			} else if (lines.equalsIgnoreCase("Over")) {
 
 				if (tgoals < pgoals) {
