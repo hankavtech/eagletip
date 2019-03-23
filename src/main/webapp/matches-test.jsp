@@ -918,6 +918,13 @@ window.setTimeout(function() {
 						 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 						 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 						 $("#team2").val($("#match").find(':selected').attr('data-team2'));
+						 $('#market').prop('selected', function() {
+						        return this.defaultSelected;
+						    });
+						 $('#lines')
+						    .find('option')
+						    .remove()
+						    .end();
 					 }
 				});
 				
@@ -980,6 +987,13 @@ window.setTimeout(function() {
 					 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 					 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 					 $("#team2").val($("#match").find(':selected').attr('data-team2'));
+					 $('#market').prop('selected', function() {
+					        return this.defaultSelected;
+					    });
+					 $('#lines')
+					    .find('option')
+					    .remove()
+					    .end();
 				 });
 			 }
 		});
@@ -1012,6 +1026,13 @@ window.setTimeout(function() {
 					 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 					 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 					 $("#team2").val($("#match").find(':selected').attr('data-team2'));
+					 $('#market').prop('selected', function() {
+					        return this.defaultSelected;
+					    });
+					 $('#lines')
+					    .find('option')
+					    .remove()
+					    .end();
 					 
 					 
 				 });
@@ -1028,7 +1049,14 @@ window.setTimeout(function() {
 					 $("#matchdate").val($("#match").find(':selected').attr('data-date'));
 					 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 					 $("#team1").val($("#match").find(':selected').attr('data-team1'));
-					 $("#team2").val($("#match").find(':selected').attr('data-team2'));	    
+					 $("#team2").val($("#match").find(':selected').attr('data-team2'));	  
+					 $('#market').prop('selected', function() {
+					        return this.defaultSelected;
+					    });
+					 $('#lines')
+					    .find('option')
+					    .remove()
+					    .end();
 	    
 	    
 	});
