@@ -194,7 +194,7 @@
    <div class="col-xs-12 col-sm-6 col-md-4">
    <div class="card bg-dark text-info mb-2 m-2">
       <div class="card-header">
-        <p class="text-nowrap"><img src="https://www.eagletip.com/images/sport/${item[5]}.svg" style="width:20px;height:20px"/>
+        <p class="text-wrap"><img src="https://www.eagletip.com/images/sport/${item[5]}.svg" style="width:20px;height:20px"/>
         <span class="ml-2 mb-2">${item[0]} vs ${item[1]}</span></p>
         <p class="timecolumn">${item[2]}</p>
         <p>${item[4]}  ${item[3]}</p>
