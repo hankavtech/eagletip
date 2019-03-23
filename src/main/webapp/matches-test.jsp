@@ -1040,6 +1040,12 @@ window.setTimeout(function() {
 				if(val2.name.trim()==marketname){
 					$.each(val2.Mylines,function(ind,val){
 						 var option = document.createElement("option");
+						    if(val.trim()=="team1"){
+						    	val= $("#team1").val();
+						    }
+						    else if(val.trim()=="team2"){
+						    	val= $("#team2").val();
+						    }
 							option.text=val;
 							option.value=val;
 							document.getElementById("lines").appendChild(option);
