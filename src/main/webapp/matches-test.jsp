@@ -918,9 +918,7 @@ window.setTimeout(function() {
 						 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 						 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 						 $("#team2").val($("#match").find(':selected').attr('data-team2'));
-						 $('#market').prop('selected', function() {
-						        return this.defaultSelected;
-						    });
+						 $('#market').prop('selectedIndex', 0);
 						 $('#lines')
 						    .find('option')
 						    .remove()
@@ -987,9 +985,7 @@ window.setTimeout(function() {
 					 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 					 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 					 $("#team2").val($("#match").find(':selected').attr('data-team2'));
-					 $('#market').prop('selected', function() {
-					        return this.defaultSelected;
-					    });
+					 $('#market').prop('selectedIndex', 0);
 					 $('#lines')
 					    .find('option')
 					    .remove()
@@ -1026,9 +1022,7 @@ window.setTimeout(function() {
 					 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 					 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 					 $("#team2").val($("#match").find(':selected').attr('data-team2'));
-					 $('#market').prop('selected', function() {
-					        return this.defaultSelected;
-					    });
+					 $('#market').prop('selectedIndex', 0);
 					 $('#lines')
 					    .find('option')
 					    .remove()
@@ -1050,9 +1044,7 @@ window.setTimeout(function() {
 					 $("#matchdate").val(moment.utc($("#matchdate").val()).utcOffset(parseInt(min)).format('ll HH:mm'));
 					 $("#team1").val($("#match").find(':selected').attr('data-team1'));
 					 $("#team2").val($("#match").find(':selected').attr('data-team2'));	  
-					 $('#market').prop('selected', function() {
-					        return this.defaultSelected;
-					    });
+					 $('#market').prop('selectedIndex', 0);
 					 $('#lines')
 					    .find('option')
 					    .remove()
