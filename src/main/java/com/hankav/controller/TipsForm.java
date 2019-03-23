@@ -42,6 +42,13 @@ public class TipsForm extends HttpServlet {
 		String market = request.getParameter("market");
 		String lines = request.getParameter("lines");
 		String sublines = request.getParameter("sublines");
+
+		if (lines.equalsIgnoreCase("team1")) {
+			lines = team1;
+		} else if (lines.equalsIgnoreCase("team2")) {
+			lines = team2;
+		}
+
 		String bookmaker = request.getParameter("bookmaker");
 		String odds = request.getParameter("odds");
 		if (request.getSession().getAttribute("odds").equals("FRACTIONAL")) {
