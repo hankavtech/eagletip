@@ -168,6 +168,11 @@ public class BasketballResultUpdate {
 				result = "void";
 			} else {
 				BasketballResults results = new BasketballResults();
+				if (lines.equalsIgnoreCase(team1)) {
+					lines = team1;
+				} else if (lines.equalsIgnoreCase(team2)) {
+					lines = team2;
+				}
 				result = results.getResults(market, lines, sublines, mwinner, fqscore1, fqscore2, tscore1, tscore2,
 						fhscore1, fhscore2);
 			}

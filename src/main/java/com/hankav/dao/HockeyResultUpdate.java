@@ -190,6 +190,11 @@ public class HockeyResultUpdate {
 				result = "void";
 			} else {
 				HockeyResults results = new HockeyResults();
+				if (lines.equalsIgnoreCase(team1)) {
+					lines = team1;
+				} else if (lines.equalsIgnoreCase(team2)) {
+					lines = team2;
+				}
 				result = results.getResults(market, lines, sublines, fpscore1, fpscore2, tscore1, tscore2, exscore1,
 						exscore2, penscore1, penscore2, extratime);
 			}

@@ -150,6 +150,11 @@ public class TennisResultUpdate {
 				result = "void";
 			} else {
 				TennisResults results = new TennisResults();
+				if (lines.equalsIgnoreCase(team1)) {
+					lines = team1;
+				} else if (lines.equalsIgnoreCase(team2)) {
+					lines = team2;
+				}
 				result = results.getResults(market, lines, sublines, fscore1, fscore2, tscore1, tscore2, mwinner,
 						tsets1, tsets2);
 			}

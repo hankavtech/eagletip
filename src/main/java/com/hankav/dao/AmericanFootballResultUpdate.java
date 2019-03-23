@@ -133,6 +133,11 @@ public class AmericanFootballResultUpdate {
 				result = "void";
 			} else {
 				AmericanFootballResults results = new AmericanFootballResults();
+				if (lines.equalsIgnoreCase(team1)) {
+					lines = team1;
+				} else if (lines.equalsIgnoreCase(team2)) {
+					lines = team2;
+				}
 				result = results.getResults(market, lines, sublines, mwinner, tscore1, tscore2);
 			}
 
