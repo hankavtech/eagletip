@@ -76,8 +76,6 @@ public class FootballResultUpdate {
 				} else {
 					tscore = list.get(3).trim().split("-");
 				}
-				System.out.println("tscoere zero is" + tscore[0]);
-				System.out.println("tscoere zero is" + tscore[1]);
 				tscore1 = Integer.parseInt(tscore[0].trim().replaceAll("\\P{Print}", ""));
 				tscore2 = Integer.parseInt(tscore[1].trim().replaceAll("\\P{Print}", ""));
 				if (extratime) {
