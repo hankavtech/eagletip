@@ -2,56 +2,47 @@ package com.hankav.model;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.List;
 
 import javax.mail.internet.AddressException;
 
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
 
 import com.hankav.dao.HibSessionFactory;
+import com.hankav.dao.MatchReader;
 
 public class Main {
 
 	public static void main(String[] args) throws ParseException, HibernateException, IOException, AddressException {
 
-		SessionFactory factory = HibSessionFactory.getFactory();
-		Session session = factory.openSession();
-		session.beginTransaction();
-		/* SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm"); */
-
-		Criteria criteria = session.createCriteria(Tip.class);
-		criteria.createAlias("tip_sport", "sport");
-		criteria.createAlias("tipster", "tipster");
-		criteria.add(Restrictions.eq("sport.name", "cricket"));
 		/*
+		 * SessionFactory factory = HibSessionFactory.getFactory(); Session session =
+		 * factory.openSession(); session.beginTransaction(); SimpleDateFormat df = new
+		 * SimpleDateFormat("dd/MM/yyyy HH:mm");
+		 * 
+		 * Criteria criteria = session.createCriteria(Tip.class);
+		 * criteria.createAlias("tip_sport", "sport"); criteria.createAlias("tipster",
+		 * "tipster"); criteria.add(Restrictions.eq("sport.name", "cricket"));
+		 * 
 		 * criteria.add(Restrictions.eq("tipster.tipster_name", "prashanth nagaraj"));
+		 * 
+		 * criteria.add(Restrictions.eq("team1", "Chennai Super Kings"));
+		 * criteria.setProjection(
+		 * Projections.projectionList().add(Projections.property("team1")).add(
+		 * Projections.property("tip_id"))); List<Object[]> tips = criteria.list();
+		 * 
+		 * for (Object[] tip : tips) { System.out.print(" " + tip[1]);
+		 * System.out.println(""); Criteria criteria1 =
+		 * session.createCriteria(Tip.class); criteria1.add(Restrictions.eq("tip_id",
+		 * tip[1])); Tip tip1 = (Tip) criteria1.uniqueResult(); Double odds =
+		 * tip1.getTip_odds(); Integer units = tip1.getTip_units();
+		 * tip1.setTip_result("won"); tip1.setTip_profit(odds * units);
+		 * tip1.setStatus("finished"); tip1.setTipscore("71:70"); session.flush();
+		 * System.out.println(tip1.getTipster().getTipster_name());
+		 * 
+		 * }
 		 */
-		criteria.add(Restrictions.eq("team1", "Chennai Super Kings"));
-		criteria.setProjection(
-				Projections.projectionList().add(Projections.property("team1")).add(Projections.property("tip_id")));
-		List<Object[]> tips = criteria.list();
-
-		for (Object[] tip : tips) {
-			System.out.print(" " + tip[1]);
-			System.out.println("");
-			Criteria criteria1 = session.createCriteria(Tip.class);
-			criteria1.add(Restrictions.eq("tip_id", tip[1]));
-			Tip tip1 = (Tip) criteria1.uniqueResult();
-			Double odds = tip1.getTip_odds();
-			Integer units = tip1.getTip_units();
-			tip1.setTip_result("won");
-			tip1.setTip_profit(odds * units);
-			tip1.setStatus("finished");
-			tip1.setTipscore("71:70");
-			session.flush();
-			System.out.println(tip1.getTipster().getTipster_name());
-
-		}
 
 		/*
 		 * Calendar cal = Calendar.getInstance();
@@ -67,20 +58,22 @@ public class Main {
 		 * tip.setTip_match_time(df.parse("23/03/2019 14:30")); tip.setTip_odds(1.8);
 		 * tip.setTip_units(100); session.save(tip);
 		 */
-		session.getTransaction().commit();
-		session.close();
+		/*
+		 * session.getTransaction().commit(); session.close();
+		 */
 
 		/* tip.setTip_sublines("22.5"); */
 
-		/*
-		 * SessionFactory factory = HibSessionFactory.getFactory(); Session session =
-		 * factory.openSession(); MatchReader reader = new MatchReader();
-		 * reader.readmatches("hockey");
-		 */
+		SessionFactory factory = HibSessionFactory.getFactory();
+		Session session = factory.openSession();
+		session.beginTransaction();
+		MatchReader reader = new MatchReader();
+		reader.readmatches("football");
+		session.getTransaction().commit();
+		session.close();
+
 		/* FootballResultUpdate up = new FootballResultUpdate(); */
 		/* up.updateResults(); */
-
-		session.close();
 
 		/*
 		 * MatchReader reader = new MatchReader(); reader.readmatches("hockey");

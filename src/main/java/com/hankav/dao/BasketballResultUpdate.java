@@ -159,9 +159,9 @@ public class BasketballResultUpdate {
 			String team1 = tip.getTeam1();
 			String team2 = tip.getTeam2();
 			if (mwinner.equals("team1")) {
-				mwinner = team1;
+				mwinner = "team1";
 			} else if (mwinner.equals("team2")) {
-				mwinner = team2;
+				mwinner = "team2";
 			}
 
 			if (mwinner.equalsIgnoreCase("void")) {
