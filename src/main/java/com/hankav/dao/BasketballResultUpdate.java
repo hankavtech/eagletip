@@ -37,7 +37,7 @@ public class BasketballResultUpdate {
 	public void updateResults() throws FileNotFoundException, IOException {
 		FileReader reader = null;
 		try {
-			reader = new FileReader("/var/lib/etresources/results/basketballresults.txt");
+			reader = new FileReader("C:/Users/prashanth/eclipse-workspace/foot/resultsscraper/basketballresults.txt");
 		} catch (FileNotFoundException ex) {
 			System.out.println("no such file");
 			return;
@@ -123,15 +123,8 @@ public class BasketballResultUpdate {
 
 	public void printcontents() {
 		matchid = plist1.get(0);
-
-		System.out.print("player1 games =" + tscore1 + "---");
-		System.out.print("player2 games =" + tscore2 + "---");
-		System.out.print("player 1 First qUAR =" + fqscore1);
-		System.out.print("player 2 SECOND quar =" + fqscore2);
-		System.out.print(" " + fhscore1);
-		System.out.print(" " + fhscore2);
-		System.out.print(plist1.get(plist1.size() - 1));
-		System.out.print(plist2.get(plist2.size() - 1));
+		System.out.println("match id is" + matchid);
+		System.out.println(mwinner);
 		updateTip();
 
 		plist1.clear();
@@ -149,7 +142,7 @@ public class BasketballResultUpdate {
 	public void updateTip() {
 		String result;
 		Query query = session.createQuery("FROM Tip WHERE tip_matchid=:matchid AND status=:status");
-		query.setParameter("matchid", matchid);
+		query.setParameter("matchid", matchid.trim());
 		query.setParameter("status", "waiting");
 		Tip tip = (Tip) query.uniqueResult();
 		if (tip != null) {

@@ -36,7 +36,7 @@ public class FootballResultUpdate {
 		tx = session.beginTransaction();
 		FileReader reader = null;
 		try {
-			reader = new FileReader("/var/lib/etresources/results/footballresults.txt");
+			reader = new FileReader("C:/Users/prashanth/eclipse-workspace/foot/resultsscraper/footballresults.txt");
 		} catch (IOException IOException) {
 			System.out.println("no file found");
 			return;

@@ -22,7 +22,7 @@
 </schedule>
 
 <!-- schedule football results -->
-<schedule>
+<!-- <schedule>
  <job>
  <name>FootballResultsJob</name>
  <group>FootballResults_GROUP</group>
@@ -38,10 +38,10 @@
  <cron-expression>0 0/59 * * * ?</cron-expression>
  </cron>
 </trigger>
-</schedule>
+</schedule> -->
 
 
-<schedule>
+<!-- <schedule>
  <job>
  <name>TennisResultsJob</name>
  <group>TennisResults_GROUP</group>
@@ -57,10 +57,10 @@
  <cron-expression>0 15/59 * * * ?</cron-expression>
  </cron>
 </trigger>
-</schedule>
+</schedule> -->
 
 
-<schedule>
+<!-- <schedule>
  <job>
  <name>BasketballResultsJob</name>
  <group>BasketballResults_GROUP</group>
@@ -76,10 +76,10 @@
  <cron-expression>0 30/59 * * * ?</cron-expression>
  </cron>
 </trigger>
-</schedule>
+</schedule> -->
 
 
-<schedule>
+<!-- <schedule>
  <job>
  <name>HockeyResultsJob</name>
  <group>HockeyResults_GROUP</group>
@@ -95,9 +95,9 @@
  <cron-expression>0 45/59 * * * ?</cron-expression>
  </cron>
 </trigger>
-</schedule>
+</schedule> -->
 
-<schedule>
+<!-- <schedule>
  <job>
  <name>AmericanFootballResultsJob</name>
  <group>AmericanFootballResults_GROUP</group>
@@ -113,7 +113,7 @@
  <cron-expression>0 59/59 * * * ?</cron-expression>
  </cron>
 </trigger>
-</schedule>
+</schedule> -->
 
 
 
