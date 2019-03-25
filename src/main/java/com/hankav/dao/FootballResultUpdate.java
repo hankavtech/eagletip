@@ -36,7 +36,7 @@ public class FootballResultUpdate {
 		tx = session.beginTransaction();
 		FileReader reader = null;
 		try {
-			reader = new FileReader("C:/Users/prashanth/eclipse-workspace/foot/resultsscraper/footballresults.txt");
+			reader = new FileReader("/var/lib/etresources/results/footballresults.txt");
 		} catch (IOException IOException) {
 			System.out.println("no file found");
 			return;
@@ -76,11 +76,15 @@ public class FootballResultUpdate {
 				} else {
 					tscore = list.get(3).trim().split("-");
 				}
-				tscore1 = Integer.parseInt(tscore[0].trim().replaceAll("\\P{Print}", ""));
-				tscore2 = Integer.parseInt(tscore[1].trim().replaceAll("\\P{Print}", ""));
-				if (extratime) {
-					exscore1 = Integer.parseInt(exscore[0].trim().replaceAll("\\P{Print}", ""));
-					exscore2 = Integer.parseInt(exscore[1].trim().replaceAll("\\P{Print}", ""));
+				try {
+					tscore1 = Integer.parseInt(tscore[0].trim().replaceAll("\\P{Print}", ""));
+					tscore2 = Integer.parseInt(tscore[1].trim().replaceAll("\\P{Print}", ""));
+					if (extratime) {
+						exscore1 = Integer.parseInt(exscore[0].trim().replaceAll("\\P{Print}", ""));
+						exscore2 = Integer.parseInt(exscore[1].trim().replaceAll("\\P{Print}", ""));
+					}
+				} catch (Exception e) {
+
 				}
 
 			} else {

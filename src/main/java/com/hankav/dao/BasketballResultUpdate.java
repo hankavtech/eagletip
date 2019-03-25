@@ -37,7 +37,7 @@ public class BasketballResultUpdate {
 	public void updateResults() throws FileNotFoundException, IOException {
 		FileReader reader = null;
 		try {
-			reader = new FileReader("C:/Users/prashanth/eclipse-workspace/foot/resultsscraper/basketballresults.txt");
+			reader = new FileReader("/var/lib/etresources/results/basketballresults.txt");
 		} catch (FileNotFoundException ex) {
 			System.out.println("no such file");
 			return;
@@ -56,27 +56,51 @@ public class BasketballResultUpdate {
 
 				}
 				if (plist1.get(1).equals("Fin")) {
-					fhscore1 = Integer.parseInt(plist1.get(4)) + Integer.parseInt(plist1.get(5));
+					try {
+						fhscore1 = Integer.parseInt(plist1.get(4)) + Integer.parseInt(plist1.get(5));
+					} catch (Exception e) {
+
+					}
 					if (plist1.contains("bold")) {
 						mwinner = "team1";
-						tscore1 += Integer.parseInt(plist1.get(3));
-						fqscore1 = Integer.parseInt(plist1.get(4));
+						try {
+							tscore1 += Integer.parseInt(plist1.get(3));
+							fqscore1 = Integer.parseInt(plist1.get(4));
+						} catch (Exception e) {
+
+						}
 
 					} else {
-						tscore1 += Integer.parseInt(plist1.get(3));
-						fqscore1 = Integer.parseInt(plist1.get(4));
+						try {
+							tscore1 += Integer.parseInt(plist1.get(3));
+							fqscore1 = Integer.parseInt(plist1.get(4));
+						} catch (Exception e) {
+
+						}
 						mwinner = "team2";
 					}
 				} else if (plist1.get(1).equalsIgnoreCase("AOT")) {
-					fhscore1 = Integer.parseInt(plist1.get(4) + plist1.get(5));
+					try {
+						fhscore1 = Integer.parseInt(plist1.get(4) + plist1.get(5));
+					} catch (Exception e) {
+
+					}
 					if (plist1.contains("bold")) {
 						mwinner = "team1";
-						tscore1 += Integer.parseInt(plist1.get(3)) - Integer.parseInt(plist1.get(plist1.size() - 1));
-						fqscore1 = Integer.parseInt(plist1.get(4));
+						try {
+							tscore1 += Integer.parseInt(plist1.get(3))
+									- Integer.parseInt(plist1.get(plist1.size() - 1));
+							fqscore1 = Integer.parseInt(plist1.get(4));
+						} catch (Exception e) {
 
+						}
 					} else {
-						tscore1 += Integer.parseInt(plist1.get(3));
-						fqscore1 = Integer.parseInt(plist1.get(4));
+						try {
+							tscore1 += Integer.parseInt(plist1.get(3));
+							fqscore1 = Integer.parseInt(plist1.get(4));
+						} catch (Exception e) {
+
+						}
 						mwinner = "team2";
 					}
 				}
@@ -101,14 +125,21 @@ public class BasketballResultUpdate {
 					}
 
 				}
+				try {
+					fhscore2 = Integer.parseInt(plist2.get(3)) + Integer.parseInt(plist2.get(4));
+				} catch (Exception e) {
 
-				fhscore2 = Integer.parseInt(plist2.get(3)) + Integer.parseInt(plist2.get(4));
+				}
 				if (plist1.get(1).equalsIgnoreCase("Fin")) {
 					tscore2 += Integer.parseInt(plist2.get(2));
 				} else if (plist1.get(1).equalsIgnoreCase("AOT")) {
 					tscore2 += Integer.parseInt(plist2.get(2)) - Integer.parseInt(plist2.get(plist2.size() - 1));
 				}
-				fqscore2 = Integer.parseInt(plist2.get(3));
+				try {
+					fqscore2 = Integer.parseInt(plist2.get(3));
+				} catch (Exception e) {
+
+				}
 				printcontents();
 
 			}
@@ -123,8 +154,6 @@ public class BasketballResultUpdate {
 
 	public void printcontents() {
 		matchid = plist1.get(0);
-		System.out.println("match id is" + matchid);
-		System.out.println(mwinner);
 		updateTip();
 
 		plist1.clear();
