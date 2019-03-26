@@ -26,7 +26,6 @@ public class HockeyResults {
 					result = "void";
 				}
 
-				result = "won";
 			} else if (lines.equalsIgnoreCase("Over")) {
 
 				if (tgoals < pgoals) {
@@ -89,7 +88,6 @@ public class HockeyResults {
 					result = "void";
 				}
 
-				result = "won";
 			} else if (lines.equalsIgnoreCase("Over")) {
 
 				if (tgoals < pgoals) {
