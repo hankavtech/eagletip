@@ -116,55 +116,58 @@ public class AmericanFootballResultUpdate {
 		Query query = session.createQuery("FROM Tip WHERE tip_matchid=:matchid AND status=:status");
 		query.setParameter("matchid", matchid);
 		query.setParameter("status", "waiting");
-		Tip tip = (Tip) query.uniqueResult();
-		if (tip != null) {
-			String market = tip.getTip_market();
-			String lines = tip.getTip_lines();
-			String sublines = tip.getTip_sublines();
-			String team1 = tip.getTeam1();
-			String team2 = tip.getTeam2();
-			if (mwinner.equals("team1")) {
-				mwinner = team1;
-			} else if (mwinner.equals("team2")) {
-				mwinner = team2;
-			}
-
-			if (mwinner.equalsIgnoreCase("void")) {
-				result = "void";
-			} else {
-				AmericanFootballResults results = new AmericanFootballResults();
-				if (lines.equalsIgnoreCase(team1)) {
-					lines = "team1";
-				} else if (lines.equalsIgnoreCase(team2)) {
-					lines = "team2";
+		List<Tip> tips = (List<Tip>) query.list();
+		if (tips.size() != 0) {
+			for (Tip tip : tips) {
+				String market = tip.getTip_market();
+				String lines = tip.getTip_lines();
+				String sublines = tip.getTip_sublines();
+				String team1 = tip.getTeam1();
+				String team2 = tip.getTeam2();
+				if (mwinner.equals("team1")) {
+					mwinner = team1;
+				} else if (mwinner.equals("team2")) {
+					mwinner = team2;
 				}
-				result = results.getResults(market, lines, sublines, mwinner, tscore1, tscore2);
+
+				if (mwinner.equalsIgnoreCase("void")) {
+					result = "void";
+				} else {
+					AmericanFootballResults results = new AmericanFootballResults();
+					if (lines.equalsIgnoreCase(team1)) {
+						lines = "team1";
+					} else if (lines.equalsIgnoreCase(team2)) {
+						lines = "team2";
+					}
+					result = results.getResults(market, lines, sublines, mwinner, tscore1, tscore2);
+				}
+
+				tip.setTip_result(result);
+				tip.setTipscore(tscore1 + "-" + tscore2);
+				Double odds = tip.getTip_odds();
+				Integer units = tip.getTip_units();
+				String s = tip.getTip_sublines();
+				String fra = s.substring(s.indexOf(".") + 1);
+
+				if (result.equalsIgnoreCase("won")) {
+					tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format((odds * units) - units)));
+				} else if (result.equalsIgnoreCase("lost")) {
+					tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format(units * -1)));
+
+				} else if (result.equalsIgnoreCase("void")) {
+					tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format(0)));
+
+				} else if (result.equalsIgnoreCase("halfwon")) {
+					tip.setTip_profit(
+							Double.parseDouble(new DecimalFormat("##.##").format(((odds * units) - units) / 2)));
+
+				} else if (result.equalsIgnoreCase("halflost")) {
+					tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format((units * -1) / 2)));
+
+				}
+
+				tip.setStatus("finished");
 			}
-
-			tip.setTip_result(result);
-			tip.setTipscore(tscore1 + "-" + tscore2);
-			Double odds = tip.getTip_odds();
-			Integer units = tip.getTip_units();
-			String s = tip.getTip_sublines();
-			String fra = s.substring(s.indexOf(".") + 1);
-
-			if (result.equalsIgnoreCase("won")) {
-				tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format((odds * units) - units)));
-			} else if (result.equalsIgnoreCase("lost")) {
-				tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format(units * -1)));
-
-			} else if (result.equalsIgnoreCase("void")) {
-				tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format(0)));
-
-			} else if (result.equalsIgnoreCase("halfwon")) {
-				tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format(((odds * units) - units) / 2)));
-
-			} else if (result.equalsIgnoreCase("halflost")) {
-				tip.setTip_profit(Double.parseDouble(new DecimalFormat("##.##").format((units * -1) / 2)));
-
-			}
-
-			tip.setStatus("finished");
 		}
 
 	}
