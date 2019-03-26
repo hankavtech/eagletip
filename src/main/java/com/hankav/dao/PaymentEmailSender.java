@@ -46,9 +46,9 @@ public class PaymentEmailSender {
 					+ "<tr><p>You can see all your active tips in your profile page instantaneously</p></tr>"
 					+ "<tr><td> <h2>Item ordered<br></h2></td</tr>"
 					+ "<tr><td><img style='width:50px;height:50px' src='https://www.eagletip.com/images/tipsters/"
-					+ product + ".jpg'><a href='https://www.eagletip.com/tipster/activetips/name=" + product + "'>"
-					+ product + "</a></td><td><table><tr><p>Subscription plan: " + plan
-					+ " month</p></tr><tr><p>Start date:" + start + "</p></tr><tr><p>End date:" + end
+					+ product + ".jpg'><a href='https://www.eagletip.com/tipster/activetips?name="
+					+ product.replace("+", "%20") + "'>" + product + "</a></td><td><table><tr><p>Subscription plan: "
+					+ plan + " month</p></tr><tr><p>Start date:" + start + "</p></tr><tr><p>End date:" + end
 					+ "</p></tr></table></td></tr>"
 					+ "<tr><p>Email us <a href='mailto:info@eagletip.com?Subject=Order%20Enquiry' target='_top'>here</a> for assistance.</p></tr>"
 					+ "<tr><td><p>Note:Free tipsters' subscription is valid only only the tipster is available as free and the subscription will be terminated when the tipster goes premium.</p></td></tr>"
