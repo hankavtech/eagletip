@@ -68,12 +68,13 @@ public class HockeyResultUpdate {
 				if (!(status.equals("Canc") || status.equals("Postp") || status.equals("Abn"))) {
 
 					if (status.equalsIgnoreCase("Fin")) {
+
 						if (plist1.contains("bold")) {
 							mwinner = "team1";
-							tscore1 += Integer.parseInt(plist1.get(3));
-							fpscore1 = Integer.parseInt(plist1.get(4));
 
 						}
+						tscore1 += Integer.parseInt(plist1.get(3));
+						fpscore1 = Integer.parseInt(plist1.get(4));
 
 					} else if (status.equalsIgnoreCase("AOT")) {
 						exscore1 = Integer.parseInt(plist1.get(plist1.size() - 1));
