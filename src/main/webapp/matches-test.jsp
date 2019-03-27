@@ -967,7 +967,7 @@ window.setTimeout(function() {
 		var selectedText = $("#league option:selected").html();
 		console.log(marketresponse);
 	    $.each(marketresponse[selectedText],function(index,value){
-			$("#tournament").append('<option value='+value+'>'+value+'</option>');	
+			$("#tournament").append('<option value="'+value+'">'+value+'</option>');	
 			console.log(value);
 		});
 	    
