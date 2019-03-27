@@ -109,7 +109,7 @@ body {
 <td><a class="text-warning" href="https://www.eagletip.com/tipster/activetips?name=${paidtipsters.name }">${paidtipsters.name}</a></td>
 
 <td><span <c:if test='${i > 0}'>class='text-success'</c:if> <c:if test='${i < 0}'>class='text-danger'</c:if>>${i} </span> &nbsp;</td>
-<td <c:if test='${yield > 0}'>class='text-success'</c:if> <c:if test='${yield < 0}'>class='text-danger'</c:if>>${yield} % &nbsp;</td>
+<td <c:if test='${yield > 0}'>class='text-success text-nowrap'</c:if> <c:if test='${yield < 0}'>class='text-danger'</c:if>>${yield} % &nbsp;</td>
 </tr>
 
 </c:forEach>
@@ -146,7 +146,7 @@ body {
 <td><a class="text-warning" href="https://www.eagletip.com/tipster/activetips?name=${freetipsters.name }">${freetipsters.name}</a></td>
 
 <td><span <c:if test='${i > 0}'>class='text-success'</c:if> <c:if test='${i < 0}'>class='text-danger'</c:if>>${i} </span> &nbsp;</td>
-<td <c:if test='${yield > 0}'>class='text-success'</c:if> <c:if test='${yield < 0}'>class='text-danger'</c:if>>${yield} % &nbsp;</td>
+<td <c:if test='${yield > 0}'>class='text-success text-nowrap'</c:if> <c:if test='${yield < 0}'>class='text-danger'</c:if>>${yield} % &nbsp;</td>
 </tr>
 
 </c:forEach>
