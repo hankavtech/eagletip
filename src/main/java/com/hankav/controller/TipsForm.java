@@ -60,6 +60,7 @@ public class TipsForm extends HttpServlet {
 		String tournament = request.getParameter("tournament");
 		SessionFactory factory = HibSessionFactory.getFactory();
 		Session session = factory.openSession();
+		session.beginTransaction();
 		Criteria criteria = session.createCriteria(Tipster.class);
 		criteria.add(Restrictions.eq("tipster_name", username));
 		criteria.setProjection(Projections.property("tipster_category"));
