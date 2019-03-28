@@ -42,7 +42,7 @@ public class TipPost {
 			return "failed";
 		} else {
 			SessionFactory factory = HibSessionFactory.getFactory();
-			Session session = factory.getCurrentSession();
+			Session session = factory.openSession();
 			Transaction tx = session.beginTransaction();
 
 			// check if tip is already posted by tipster
