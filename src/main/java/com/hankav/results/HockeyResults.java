@@ -48,7 +48,7 @@ public class HockeyResults {
 
 		}
 
-		if (market.equalsIgnoreCase("First Period Money Line")) {
+		if (market.equalsIgnoreCase("First Period Money Line 3 Way")) {
 
 			String mresult = null;
 			if (fpscore1 > fpscore2) {
@@ -57,6 +57,28 @@ public class HockeyResults {
 				mresult = "team2";
 			} else if (fpscore2 == fpscore1) {
 				mresult = "draw";
+			}
+
+			if (lines.equalsIgnoreCase(mresult)) {
+				result = "won";
+			} else {
+				result = "lost";
+			}
+
+			return result;
+
+		}
+
+		if (market.equalsIgnoreCase("First Period Money Line")) {
+
+			String mresult = null;
+			if (fpscore1 > fpscore2) {
+				mresult = "team1";
+			} else if (fpscore2 > fpscore1) {
+				mresult = "team2";
+			} else if (fpscore2 == fpscore1) {
+				mresult = "void";
+				return mresult;
 			}
 
 			if (lines.equalsIgnoreCase(mresult)) {
@@ -148,7 +170,7 @@ public class HockeyResults {
 
 		}
 
-		if (market.equalsIgnoreCase("Money Line")) {
+		if (market.equalsIgnoreCase("Money Line 3 Way")) {
 
 			String mresult = null;
 			if (tscore1 > tscore2) {
@@ -157,6 +179,28 @@ public class HockeyResults {
 				mresult = "team2";
 			} else if (tscore2 == tscore1) {
 				mresult = "draw";
+			}
+
+			if (lines.equalsIgnoreCase(mresult)) {
+				result = "won";
+			} else {
+				result = "lost";
+			}
+
+			return result;
+
+		}
+
+		else if (market.equalsIgnoreCase("Money Line")) {
+
+			String mresult = null;
+			if (tscore1 > tscore2) {
+				mresult = "team1";
+			} else if (tscore2 > tscore1) {
+				mresult = "team2";
+			} else if (tscore2 == tscore1) {
+				mresult = "void";
+				return mresult;
 			}
 
 			if (lines.equalsIgnoreCase(mresult)) {

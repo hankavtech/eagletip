@@ -225,6 +225,24 @@ public class BasketballResults {
 
 			return result;
 
+		} else if (market.equalsIgnoreCase("1st Half Money Line 3 Way")) {
+			String mresult = null;
+			if (fhscore1 > fhscore2) {
+				mresult = "team1";
+			} else if (fhscore2 > fhscore1) {
+				mresult = "team2";
+			} else if (fhscore2 == fhscore1) {
+				mresult = "draw";
+			}
+
+			if (lines.equalsIgnoreCase(mresult)) {
+				result = "won";
+			} else {
+				result = "lost";
+			}
+
+			return result;
+
 		} else if (market.equalsIgnoreCase("1st Half Money Line")) {
 			String mresult = null;
 			if (fhscore1 > fhscore2) {
@@ -232,6 +250,27 @@ public class BasketballResults {
 			} else if (fhscore2 > fhscore1) {
 				mresult = "team2";
 			} else if (fhscore2 == fhscore1) {
+				mresult = "void";
+				return mresult;
+			}
+
+			if (lines.equalsIgnoreCase(mresult)) {
+				result = "won";
+			} else {
+				result = "lost";
+			}
+
+			return result;
+
+		}
+
+		else if (market.equalsIgnoreCase("Money Line 3 Way")) {
+			String mresult = null;
+			if (tscore1 > tscore2) {
+				mresult = "team1";
+			} else if (tscore2 > tscore1) {
+				mresult = "team2";
+			} else if (tscore2 == tscore1) {
 				mresult = "draw";
 			}
 
@@ -252,7 +291,8 @@ public class BasketballResults {
 			} else if (tscore2 > tscore1) {
 				mresult = "team2";
 			} else if (tscore2 == tscore1) {
-				mresult = "draw";
+				mresult = "void";
+				return mresult;
 			}
 
 			if (lines.equalsIgnoreCase(mresult)) {
