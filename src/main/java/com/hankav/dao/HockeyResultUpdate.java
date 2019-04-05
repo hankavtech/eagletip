@@ -122,7 +122,7 @@ public class HockeyResultUpdate {
 				} else if (status.equalsIgnoreCase("AOT")) {
 
 					exscore2 = Integer.parseInt(plist2.get(plist2.size() - 1));
-					tscore2 += Integer.parseInt(plist2.get(2)) - exscore1;
+					tscore2 += Integer.parseInt(plist2.get(2)) - exscore2;
 					fpscore2 = Integer.parseInt(plist2.get(3));
 				} else if (status.equalsIgnoreCase("Pen")) {
 					exscore2 = Integer.parseInt(plist2.get(plist2.size() - 2));
