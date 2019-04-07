@@ -56,19 +56,39 @@ public class TennisResultUpdate {
 
 				}
 				if (plist1.get(1).equals("Fin")) {
-					tsets1 = Integer.parseInt(plist1.get(3));
+					try {
+						tsets1 = Integer.parseInt(plist1.get(3));
+					} catch (Exception e) {
+
+					}
 					if (plist1.contains("bold")) {
 						mwinner = "team1";
 						for (int score = 4; score < plist1.size(); score++) {
-							tscore1 += Integer.parseInt(plist1.get(score));
+							try {
+								tscore1 += Integer.parseInt(plist1.get(score));
+							} catch (Exception e) {
+
+							}
 						}
-						fscore1 = Integer.parseInt(plist1.get(4));
+						try {
+							fscore1 = Integer.parseInt(plist1.get(4));
+						} catch (Exception e) {
+
+						}
 
 					} else {
 						for (int score = 4; score < plist1.size(); score++) {
-							tscore1 += Integer.parseInt(plist1.get(score));
+							try {
+								tscore1 += Integer.parseInt(plist1.get(score));
+							} catch (Exception e) {
+
+							}
 						}
-						fscore1 = Integer.parseInt(plist1.get(4));
+						try {
+							fscore1 = Integer.parseInt(plist1.get(4));
+						} catch (Exception e) {
+
+						}
 						mwinner = "team2";
 					}
 				} else {
@@ -91,12 +111,23 @@ public class TennisResultUpdate {
 					}
 
 				}
-				tsets2 = Integer.parseInt(plist2.get(2));
+				try {
+					tsets2 = Integer.parseInt(plist2.get(2));
+				} catch (Exception e) {
 
-				for (int score = 3; score < plist2.size(); score++) {
-					tscore2 += Integer.parseInt(plist2.get(score));
 				}
-				fscore2 = Integer.parseInt(plist2.get(3));
+				for (int score = 3; score < plist2.size(); score++) {
+					try {
+						tscore2 += Integer.parseInt(plist2.get(score));
+					} catch (Exception e) {
+
+					}
+				}
+				try {
+					fscore2 = Integer.parseInt(plist2.get(3));
+				} catch (Exception e) {
+
+				}
 				printcontents();
 
 			}
