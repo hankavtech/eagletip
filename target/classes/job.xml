@@ -191,7 +191,7 @@
  <group>ScheduleMatchesUpdater_TRIGGER</group>
  <job-name>ScheduleMatchesUpdaterJob</job-name>
  <job-group>ScheduleMatchesUpdater_GROUP</job-group>
- <cron-expression>0 0 2,11 * * ?</cron-expression>
+ <cron-expression>0 0 2,14 * * ?</cron-expression>
  </cron>
 </trigger>
 </schedule>
