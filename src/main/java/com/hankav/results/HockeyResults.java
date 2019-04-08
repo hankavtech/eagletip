@@ -191,7 +191,7 @@ public class HockeyResults {
 
 		}
 
-		else if (market.equalsIgnoreCase("Money Line")) {
+		if (market.equalsIgnoreCase("Money Line")) {
 
 			String mresult = null;
 			if (tscore1 > tscore2) {
@@ -203,7 +203,7 @@ public class HockeyResults {
 				return mresult;
 			}
 
-			if (lines.equalsIgnoreCase(mresult)) {
+			if (lines.trim().equalsIgnoreCase(mresult)) {
 				result = "won";
 			} else {
 				result = "lost";
@@ -213,7 +213,7 @@ public class HockeyResults {
 
 		}
 
-		else if (market.equalsIgnoreCase("Money Line(ext-pen)")) {
+		if (market.equalsIgnoreCase("Money Line(ext-pen)")) {
 			String mresult = null;
 			if (extratime) {
 				if (totalscore1 > totalscore2) {

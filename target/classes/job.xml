@@ -178,6 +178,31 @@
 </trigger>
 </schedule>
 
+<schedule>
+ <job>
+ <name>ScheduleMatchesUpdaterJob</name>
+ <group>ScheduleMatchesUpdater_GROUP</group>
+ <description>This job will update matches at midnight everyday</description>
+ <job-class>com.hankav.results.ScheduleMatchesUpdater</job-class>
+ </job>
+<trigger>
+ <cron>
+ <name>MatchesUpdaterTrigger</name>
+ <group>ScheduleMatchesUpdater_TRIGGER</group>
+ <job-name>ScheduleMatchesUpdaterJob</job-name>
+ <job-group>ScheduleMatchesUpdater_GROUP</job-group>
+ <cron-expression>0 0 2,11 * * ?</cron-expression>
+ </cron>
+</trigger>
+</schedule>
+
+
+
+
+
+
+
+
 
 <!-- 
 <schedule>

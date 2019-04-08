@@ -25,8 +25,7 @@ public class MatchReader {
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		FileReader reader = new FileReader(
-				"C:/Users/prashanth/eclipse-workspace/foot/matchesscraper/" + sportname + "matches.txt");
+		FileReader reader = new FileReader("/var/lib/etresources/matchesscraper/" + sportname + "matches.txt");
 		BufferedReader br = new BufferedReader(reader);
 
 		int i = 0;

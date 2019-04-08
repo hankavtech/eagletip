@@ -11,10 +11,6 @@ public class Main {
 
 	public static void main(String[] args) throws ParseException, HibernateException, IOException, AddressException {
 
-		/*
-		 * TennisResultUpdate up = new TennisResultUpdate(); up.updateResults();
-		 */
-
 	}
 
 }
